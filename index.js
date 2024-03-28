@@ -3,7 +3,7 @@ const {
     getContactById,
     removeContact,
     addContact,
-} = require("./contacts.js");
+} = require("./db/contacts.js");
 
 const { Command } = require("commander");
 
@@ -22,19 +22,19 @@ const argv = program.opts();
 function invokeAction({ action, id, name, email, phone }) {
     switch (action) {
         case "list":
-            listContacts();
+            console.log(listContacts());
             break;
 
         case "get":
-            getContactById(id);
+            console.log(getContactById(id));
             break;
 
         case "add":
-            addContact(name, email, phone);
+            console.log(addContact(name, email, phone));
             break;
 
         case "remove":
-            removeContact(id);
+            console.log(removeContact(id));
             break;
 
         default:
