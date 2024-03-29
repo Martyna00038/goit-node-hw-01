@@ -36,6 +36,7 @@ async function removeContact(contactId) {
             contactsPath,
             JSON.stringify(filteredContacts, null, 2)
         );
+        console.log("Kontakt został usunięty");
     } catch (error) {
         console.log("Błąd usuwania kontaktu", error);
     }
